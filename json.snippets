@@ -1,0 +1,1931 @@
+#import
+snippet imp 
+import ${2:moduleName} from '${1:module}'$0
+endsnippet
+
+#importNoModuleName
+snippet imp
+import '${1:module}'$0
+endsnippet
+
+#importDestructing
+snippet imd
+import { $2 } from '${1:module}'$0
+endsnippet
+
+#importEverything
+snippet ime
+import * as ${2:alias} from '${1:module}'$0
+endsnippet
+
+#importAs
+snippet ima
+import { ${2:originalName} as ${3:alias} } from '${1:module}'$0
+endsnippet
+
+#exportDefault
+snippet exp
+export default $1$0
+endsnippet
+
+#exportDestructing
+snippet exd
+export { $2 } from '${1:module}'$0
+endsnippet
+
+#exportAs
+snippet exa
+export { ${2:originalName} as ${3:alias} } from '${1:module}'$0
+endsnippet
+
+#exportNamedFunction
+snippet enf "Export named function in ES7 syntax" 
+export const ${1:functionName} = (${2:params}) => {
+  $0
+}
+endsnippet
+
+#exportDefaultFunction
+snippet edf "Export default function in ES7 syntax"
+export default (${1:params}) => {   $0 } ,    
+endsnippet
+
+#method
+snippet met "Creates a method inside a class in ES7 syntax"
+${1:methodName} = (${2:params}) => {   ${0} }  
+endsnippet
+
+#propertyGet
+snippet pge "Creates a getter property inside a class in ES7 syntax"
+get ${1:propertyName}() {   return this.${0} }    
+endsnippet
+
+#propertySet
+snippet pse "Creates a setter property inside a class in ES7 syntax"
+set ${1:propertyName}(${2:value}) {   ${0} }   
+endsnippet
+
+#forEach
+snippet fre "Creates a forEach statement in ES7 syntax"
+${1:array}.forEach(${2:currentItem} => {   ${0} })   
+endsnippet
+
+#forOf
+snippet fof "Iterating over property names of iterable objects"
+for(let ${1:item} of ${2:object}) {   ${0} }   
+endsnippet
+
+#forI:
+snippet fin "Iterating over property values of iterable objects"
+for(let ${1:item} in ${2:object}) {   ${0} }   
+endsnippet
+
+#anonymousFunction
+snippet anfn "Creates an anonymous function in ES7 syntax"
+(${1:params}) => {   ${2} } 
+endsnippet
+
+#namedFunction 
+snippet nfn "Creates a named function in ES7 syntax"
+const ${1:name} = (${2:params}) => {   ${3} }   
+endsnippet
+
+#destructingObject 
+snippet dob "Creates and assigns a local variable using object destructing"
+const {${1:propertyName}} = ${2:objectToDestruct} 
+endsnippet
+
+#destructingArray 
+snippet dar "Creates and assigns a local variable using array destructing"
+const ${1:propertyName} = ${2:arrayToDestruct} 
+endsnippet
+
+#setInterval 
+snippet sti "Executes the given function at specified intervals in ES7 syntax"
+setInterval(() => {   ${2}   ${0:intervalInms})   
+endsnippet
+
+#setTimeOut 
+snippet sto "Executes the given function after the specified delay in ES7 syntax"
+setTimeout(() => {   ${2}   ${1:delayInms})   
+endsnippet
+
+#promise 
+snippet prom "Creates and returns a new Promise in the standard ES7 syntax"
+return new Promise((resolve, reject) => {   ${1} })  
+endsnippet
+
+#consoleAssert 
+snippet cas "If the specified expression is false, the message is written to the console along with a stack trace"
+console.assert ($1:expression  ${2:object}
+endsnippet
+
+#consoleClear 
+snippet ccl "Clears the console"
+console.clear() 
+endsnippet
+
+#consoleCount 
+snippet cco "Writes the the number of times that count() has been invoked at the same line and with the same label"
+console.count(${1:label}) 
+endsnippet
+
+#consoleDir 
+snippet cdi "Prints a JavaScript representation of the specified object"
+console.dir(${1:object}) 
+endsnippet
+
+#consoleError 
+snippet cer "Displays a message in the console and also includes a stack trace from where the method was called"
+console.error(${1:object}) 
+endsnippet
+
+#consoleGroup 
+snippet cgr "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+console.group(\${1:label}\) 
+endsnippet
+
+#consoleGroupEnd 
+snippet cge "Closes out the corresponding console.group()."
+console.groupEnd() 
+endsnippet
+
+#consoleLog 
+snippet clg "Displays a message in the console"
+console.log(${1:object}) 
+endsnippet
+
+#consoleTrace 
+snippet ctr "Prints a stack trace from the point where the method was called"
+console.trace(${1:object}) 
+endsnippet
+
+#consoleLogObject 
+snippet clo "Logs property with name."
+console.log('${1:object}', ${1:object}) 
+endsnippet
+
+#consoleTime 
+snippet ctm "Console time wrapper"
+console.time('${1:object}') 
+endsnippet
+
+#consoleTimeEnd 
+snippet cte "Console time end wrapper"
+console.timeEnd('${1:object}') 
+endsnippet
+
+#consoleWarn 
+snippet cwa "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+console.warn(${1:object}) 
+endsnippet
+
+#consoleInfo 
+snippet cin "Displays a message in the console but also displays a blue information icon along with the logged message"
+console.info(${1:object}) 
+endsnippet
+
+#destructProps 
+snippet cp "Creates and assigns a local variable using props destructing"
+const { $1 } = this.props 
+endsnippet
+
+#destructState 
+snippet cs "Creates and assigns a local variable using state destructing"
+const { $1 } = this.state 
+endsnippet
+
+#import React 
+snippet imr 
+import React from 'react'   
+endsnippet
+
+#import ReactDOM 
+snippet imrd 
+import ReactDOM from 'react-dom'   
+endsnippet
+
+#import React, { Component } 
+snippet imrc 
+import React, { Component } from 'react'   
+endsnippet
+
+#import React, { Component } & PropTypes 
+snippet imrcp 
+import React, { Component } from 'react' 
+import PropTypes from 'prop-types' 
+endsnippet
+
+#import React, { PureComponent } 
+snippet imrpc 
+import React, { PureComponent } from 'react'   
+endsnippet
+
+#import React, { PureComponent } & PropTypes 
+snippet imrpcp 
+import React, { PureComponent } from 'react' 
+import PropTypes from 'prop-types' 
+endsnippet
+
+#import React, { memo } 
+snippet imrm 
+import React, { memo } from 'react'   
+endsnippet
+
+#import React, { memo } & PropTypes 
+snippet imrmp 
+import React, { memo } from 'react' 
+import PropTypes from 'prop-types' 
+endsnippet
+
+#import React, {useState} 
+snippet imrs 
+import React, { useState } from 'react'   
+endsnippet
+
+#import React, {useState, useEffect} 
+snippet imrse
+import React, { useState, useEffect } from 'react'   
+endsnippet
+
+#import PropTypes 
+snippet impt 
+import PropTypes from 'prop-types'   
+endsnippet
+
+#import React Router 
+snippet imrr 
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom' 
+endsnippet
+
+#import React Browser Router 
+snippet imbr 
+import { BrowserRouter as Router } from 'react-router-dom'   
+endsnippet
+
+#import React Browser Router - Route 
+snippet imbrr 
+import { Route } from 'react-router-dom'   
+endsnippet
+
+#import React Browser Router - Route Combo 
+snippet imbrc 
+import { Route, Switch, NavLink, Link } from 'react-router-dom' 
+endsnippet
+
+#import React Browser Router - Switch 
+snippet imbrs 
+import { Switch } from 'react-router-dom'   
+endsnippet
+
+#import React Browser Router - Link 
+snippet imbrl 
+import { Link } from 'react-router-dom'   
+endsnippet
+
+#import React Browser Router - NavLink 
+snippet imbrnl 
+import { NavLink } from 'react-router-dom'   
+endsnippet
+
+#import redux statement 
+snippet redux 
+import { connect } from 'react-redux'   
+endsnippet
+
+#reactClassCompoment 
+snippet rcc "Creates a React component class with ES7 module system"
+import React, { Component } from 'react' 
+export default class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <div> 
+        $0 
+      </div> 
+    ) 
+  } 
+} 
+ 
+endsnippet
+
+#reactClassExportComponent 
+snippet rce "Creates a React component class with ES7 module system"
+import React, { Component } from 'react' 
+
+export class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <div> 
+        $0 
+      </div> 
+    ) 
+  } 
+} 
+
+export default ${1:${TM_FILENAME_BASE}} 
+
+endsnippet
+
+#reactFunctionalExportComponent 
+snippet rfce "Creates a React Functional Component with ES7 module system"
+import React from 'react' 
+
+function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+
+export default ${1:${TM_FILENAME_BASE}} 
+endsnippet
+
+#reactFunctionalComponent 
+snippet rfc "Creates a React Functional Component with ES7 module system"
+import React from 'react' 
+
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+
+endsnippet
+
+#reactFunctionalComponentWithPropTypes 
+snippet rfcp "Creates a React Functional Component with ES7 module system with PropTypes"
+import React from 'react' 
+import PropTypes from 'prop-types' 
+
+function ${1:${TM_FILENAME_BASE}}(props) { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+
+${1:${TM_FILENAME_BASE}}.propTypes = { 
+
+}
+
+export default ${1:${TM_FILENAME_BASE}} 
+endsnippet
+
+#reactArrowFunctionExportComponent 
+snippet rafce "Creates a React Arrow Function Component with ES7 module system"
+import React from 'react' 
+
+const ${1:${TM_FILENAME_BASE}} = () => {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+
+export default ${1:${TM_FILENAME_BASE}} 
+
+endsnippet
+
+#reactArrowFunctionComponent 
+snippet rafc "Creates a React Arrow Function Component with ES7 module system"
+import React from 'react'
+
+export const ${1:${TM_FILENAME_BASE}} = () => {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+
+endsnippet
+
+#reactArrowFunctionComponentWithPropTypes 
+snippet rafcp "Creates a React Arrow Function Component with ES7 module system with PropTypes"
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const ${1:${TM_FILENAME_BASE}} = props => {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+
+${1:${TM_FILENAME_BASE}}.propTypes = {
+
+}
+
+export default ${1:${TM_FILENAME_BASE}}
+
+endsnippet
+
+#reactClassExportComponentWithPropTypes 
+snippet rcep "Creates a React component class with ES7 module system"
+ 
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+ 
+export class ${1:${TM_FILENAME_BASE}} extends Component {
+  static propTypes = {
+ 
+  }
+ 
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+ 
+export default ${1:${TM_FILENAME_BASE}}
+ 
+endsnippet
+
+#reactClassPureComponent 
+snippet rpc "Creates a React pure component class with ES7 module system"
+ 
+import React, { PureComponent } from 'react'
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+ 
+endsnippet
+
+#reactClassExportPureComponent 
+snippet rpce "Creates a React pure component class with ES7 module system export"
+import React, { PureComponent } from 'react'
+ 
+export class ${1:${TM_FILENAME_BASE}} extends PureComponent {
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+ 
+export default ${1:$TM_FILENAME_BASE}
+ 
+endsnippet
+
+#reactClassPureComponentWithPropTypes 
+snippet rpcp "Creates a React component class with ES7 module system"
+ 
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {
+  static propTypes = {
+ 
+  }
+ 
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+ 
+endsnippet
+
+#reactFunctionMemoComponent 
+snippet rmc "Creates a React Memo Function Component with ES7 module system"
+ 
+import React, { memo } from 'react'
+ 
+export default memo(function ${1:${TM_FILENAME_BASE}}() {
+  return (
+    <div>
+      $0
+    </div>
+  )
+})
+ 
+endsnippet
+
+#reactFunctionMemoComponentWithPropTypes 
+snippet rmcp "Creates a React Memo Function Component with ES7 module system with PropTypes"
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+ 
+const ${1:${TM_FILENAME_BASE}} = memo(function ${1:${TM_FILENAME_BASE}}(props) {
+  return (
+    <div>
+      $0
+    </div>
+  )
+})
+ 
+${1:${TM_FILENAME_BASE}}.propTypes = {
+ 
+}
+ 
+export default ${1:${TM_FILENAME_BASE}}
+ 
+endsnippet
+
+#reactClassCompomentPropType 
+snippet rccp 
+ 
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends Component {
+  static propTypes = {
+    ${2:prop}: ${3:PropTypes}
+  }
+ 
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+ 
+Creates a React component class with PropTypes and ES7 module system
+endsnippet
+
+#reactClassCompomentRedux 
+snippet rcredux 
+ 
+import React, { Component } from 'react' 
+import { connect } from 'react-redux' 
+ 
+export class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <div> 
+        $0 
+      </div> 
+    ) 
+  } 
+} 
+ 
+const mapStateToProps = (state) => ({ 
+   
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}}) 
+ 
+,
+ Creates a React component class with connected redux and ES7 module system
+endsnippet
+
+#reactClassCompomentReduxPropTypes 
+snippet rcreduxp 
+ 
+import React, { Component } from 'react' 
+import PropTypes from 'prop-types' 
+import { connect } from 'react-redux' 
+ 
+export class ${1:${TM_FILENAME_BASE}} extends Component { 
+  static propTypes = { 
+    ${2:prop}: ${3:PropTypes} 
+  } 
+ 
+  render() { 
+    return ( 
+      <div> 
+        $0 
+      </div> 
+    ) 
+  } 
+} 
+ 
+const mapStateToProps = (state) => ({ 
+   
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}}) 
+ 
+,
+ Creates a React component class with PropTypes with connected redux and ES7 module system
+endsnippet
+
+#reactFunctionalCompomentRedux 
+snippet rfcredux 
+ 
+import React from 'react' 
+import { connect } from 'react-redux' 
+ 
+export const ${1:${TM_FILENAME_BASE}} = (props) => { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+const mapStateToProps = (state) => ({ 
+   
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}}) 
+ 
+,
+ Creates a React functional component with connected redux and ES7 module system
+endsnippet
+
+#reactFunctionalCompomentReduxPropTypes 
+snippet rfcreduxp 
+ 
+import React from 'react' 
+import PropTypes from 'prop-types' 
+import { connect } from 'react-redux' 
+ 
+export const ${1:${TM_FILENAME_BASE}} = (props) => { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+${1:${TM_FILENAME_BASE}}.propTypes = { 
+  ${2:props}: ${3:PropTypes} 
+} 
+ 
+const mapStateToProps = (state) => ({ 
+   
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}}) 
+ 
+,
+ Creates a React functional component with PropTypes with connected redux and ES7 module system
+endsnippet
+
+#mappingToProps 
+snippet reduxmap 
+ 
+const mapStateToProps = (state) => ({ 
+  ${1} 
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+
+endsnippet
+
+#classConstructor 
+snippet rconst
+ 
+constructor(props) { 
+  super(props) 
+ 
+  this.state = { 
+     $0 
+  } 
+} 
+ 
+,
+Adds a default constructor for it('', () => {})the class that contains props as arguments
+endsnippet
+
+#emptyState 
+snippet est 
+state = {,   $1, }   
+Creates empty state object. To be used in a constructor.
+endsnippet
+
+#componentWillMount 
+snippet cwm 
+componentWillMount() {,   $0, }   
+DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs
+endsnippet
+
+#componentDidMount 
+snippet cdm 
+componentDidMount() {,   $0, }   
+Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.
+endsnippet
+
+#componentWillReceiveProps 
+snippet cwr 
+componentWillReceiveProps(nextProps) {,   $0, }   
+DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render.
+endsnippet
+
+#shouldComponentUpdate 
+snippet scu 
+shouldComponentUpdate(nextProps, nextState) {,   $0, }   
+Invoked before rendering when new props or state are being received. 
+endsnippet
+
+#componentWillUpdate 
+snippet cwup 
+componentWillUpdate(nextProps, nextState) {,   $0, }   
+DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received.
+endsnippet
+
+#componentDidUpdate 
+snippet cdup 
+componentDidUpdate(prevProps, prevState) {,   $0, }   
+Invoked immediately after the component's updates are flushed to the DOM.
+endsnippet
+
+#componentWillUnmount 
+snippet cwun 
+componentWillUnmount() {,   $0, }   
+Invoked immediately before a component is unmounted from the DOM.
+endsnippet
+
+#getDerivedStateFromProps 
+snippet gdsfp 
+static getDerivedStateFromProps(props, state) {,   ${1}  } 
+Invoked right before calling the render method, both on the initial mount and on subsequent updates.
+endsnippet
+
+#getSnapshotBeforeUpdate 
+snippet gsbu 
+ 
+getSnapshotBeforeUpdate = (prevProps, prevState) => { 
+  $0 
+} 
+ 
+,
+Called right before mutations are made (e.g. before the DOM is updated)
+endsnippet
+
+#componentRender 
+snippet ren 
+ 
+render() { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+}
+,
+Basic render.
+endsnippet
+
+#createContext 
+snippet rcontext 
+const ${1:contextName} = React.createContext()   
+Create React context
+endsnippet
+
+#createRef 
+snippet cref 
+this.${1:refName}Ref = React.createRef()   
+Create ref statement used inside constructor
+endsnippet
+
+#forwardRef 
+snippet fref
+const ref = React.createRef()   
+Forward ref statement used inside component
+endsnippet
+
+#componentSetStateObject 
+snippet sst 
+this.setState({$0}) 
+Performs a shallow merge of nextState into current state
+endsnippet
+
+#componentSetStateFunc 
+snippet ssf 
+this.setState((state, props) => { return { $0 }})   
+Performs a shallow merge of nextState into current state
+endsnippet
+
+#componentProps 
+snippet props 
+this.props.$0 
+Access component's props
+endsnippet
+
+#componentState 
+snippet state 
+this.state.$0
+endsnippet
+
+#bindThis 
+snippet bnd 
+this.${1:methodName} = this.${1:methodName}.bind(this)$0 
+Binds this to a method
+endsnippet
+
+#reduxAction 
+snippet rxaction 
+ 
+export const ${1:actionName} = (payload) => ({ 
+  type: ${3:type  
+  payload 
+}) 
+ 
+
+endsnippet
+
+#reduxConst 
+snippet rxconst 
+export const ${1:constantName} = '${1:constantName}'
+endsnippet
+
+#reduxReducer 
+snippet rxreducer 
+ 
+const initialState = { 
+ 
+} 
+ 
+export default (state = initialState, { type, payload }) => { 
+  switch (type) { 
+ 
+  case ${1:typeName}: 
+    return { ...state, ...payload } 
+ 
+  default: 
+    return state 
+  } 
+} 
+ 
+
+endsnippet
+
+#reduxSelector 
+snippet rxselect 
+ 
+import { createSelector } from 'reselect' 
+ 
+export const ${1:selectorName} = state => state.${2:selector} 
+ 
+
+endsnippet
+
+#reduxSlice 
+snippet rxslice 
+ 
+import { createSlice } from '@reduxjs/toolkit' 
+ 
+const initialState = { 
+ 
+} 
+ 
+const ${1:${TM_FILENAME_BASE}} = createSlice({ 
+  name: ${2:sliceName  
+  initialState, 
+  reducers: { 
+   
+  } 
+}); 
+ 
+export const { 
+ 
+} = ${1:${TM_FILENAME_BASE}}.actions 
+export default ${1:${TM_FILENAME_BASE}}.reducer
+
+endsnippet
+
+#reactNativeComponent 
+snippet rnc 
+ 
+import React, { Component } from 'react' 
+import { Text, View } from 'react-native' 
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+
+endsnippet
+
+#reactNativeComponentWithStyles 
+snippet rncs 
+ 
+import React, { Component } from 'react' 
+import { Text, StyleSheet, View } from 'react-native' 
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+const styles = StyleSheet.create({}) 
+ 
+
+endsnippet
+
+#reactNativeComponentExport 
+snippet rnce 
+import React, { Component } from 'react' 
+import { Text, View } from 'react-native' 
+ 
+export class ${1:${TM_FILENAME_BASE}} extends Component { 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+
+endsnippet
+
+#reactNativePureComponent 
+snippet rnpc 
+import React, { PureComponent } from 'react' 
+import { Text, View } from 'react-native' 
+ 
+export default class ${1:${TM_FILENAME_BASE}} extends PureComponent { 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+
+endsnippet
+
+#reactNativePureComponentExport 
+snippet rnpce 
+ 
+import React, { PureComponent } from 'react' 
+import { Text, View } from 'react-native' 
+ 
+export class ${1:${TM_FILENAME_BASE}} extends PureComponent { 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+
+endsnippet
+
+#reactNativeClassComponentRedux 
+snippet rncredux 
+ 
+import React, { Component } from 'react' 
+import { View, Text } from 'react-native' 
+import PropTypes from 'prop-types' 
+import { connect } from 'react-redux' 
+ 
+export class ${1:${TM_FILENAME_BASE}} extends Component { 
+  static propTypes = { 
+    ${2:prop}: ${3:PropTypes} 
+  } 
+ 
+  render() { 
+    return ( 
+      <View> 
+        <Text> ${2:textInComponent} </Text> 
+      </View> 
+    ) 
+  } 
+} 
+ 
+const mapStateToProps = (state) => ({ 
+   
+}) 
+ 
+const mapDispatchToProps = { 
+   
+} 
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}}) 
+ 
+,
+ Creates a React Native component class with PropTypes with connected redux and ES7 module system
+endsnippet
+
+#reactNativeFunctionalExportComponent 
+snippet rnfe 
+import React from 'react' 
+import { View, Text } from 'react-native' 
+ 
+const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+
+endsnippet
+
+#reactNativeFunctionalExportComponentWithStyles 
+snippet rnfes 
+import React from 'react' 
+import { StyleSheet, Text, View } from 'react-native' 
+ 
+const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+const styles = StyleSheet.create({}) 
+ 
+
+endsnippet
+
+#reactNativeFunctionalComponent 
+snippet rnf 
+ 
+import React from 'react' 
+import { View, Text } from 'react-native' 
+ 
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+
+endsnippet
+
+#reactNativeFunctionalComponentWithStyles 
+snippet rnfs 
+ 
+import React from 'react' 
+import { StyleSheet, Text, View } from 'react-native' 
+ 
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+const styles = StyleSheet.create({}) 
+ 
+
+endsnippet
+
+#reactNativeImport 
+snippet imrn 
+import { ${1:moduleName} } from 'react-native'
+endsnippet
+
+#reactNativeStyles 
+snippet rnstyle
+const styles = StyleSheet.create({,   ${1:style}, })   
+endsnippet
+
+#propTypeArray 
+snippet pta 
+PropTypes.array, 
+Array prop type
+endsnippet
+
+#propTypeArrayRequired 
+snippet ptar 
+PropTypes.array.isRequired, 
+Array prop type required
+endsnippet
+
+#propTypeBool 
+snippet ptb 
+PropTypes.bool, 
+Bool prop type
+endsnippet
+
+#propTypeBoolRequired 
+snippet ptbr 
+PropTypes.bool.isRequired, 
+Bool prop type required
+endsnippet
+
+#propTypeFunc 
+snippet ptf 
+PropTypes.func, 
+Func prop type
+endsnippet
+
+#propTypeFuncRequired 
+snippet ptfr 
+PropTypes.func.isRequired, 
+Func prop type required
+endsnippet
+
+#propTypeNumber 
+snippet ptn 
+PropTypes.number, 
+Number prop type
+endsnippet
+
+#propTypeNumberRequired 
+snippet ptnr 
+PropTypes.number.isRequired, 
+Number prop type required
+endsnippet
+
+#propTypeObject 
+snippet pto 
+PropTypes.object, 
+Object prop type
+endsnippet
+
+#propTypeObjectRequired 
+snippet ptor 
+PropTypes.object.isRequired, 
+Object prop type required
+endsnippet
+
+#propTypeString 
+snippet pts
+PropTypes.string, 
+String prop type
+endsnippet
+
+#propTypeStringRequired 
+snippet ptsr
+PropTypes.string.isRequired, 
+String prop type required
+endsnippet
+
+#propTypeNode 
+snippet ptnd 
+PropTypes.node, 
+Anything that can be rendered: numbers, strings, elements or an array
+endsnippet
+
+#propTypeNodeRequired 
+snippet ptndr 
+PropTypes.node.isRequired, 
+Anything that can be rendered: numbers, strings, elements or an array required
+endsnippet
+
+#propTypeElement 
+snippet ptel 
+PropTypes.element, 
+React element prop type
+endsnippet
+
+#propTypeElementRequired 
+snippet ptelr 
+PropTypes.element.isRequired, 
+React element prop type required
+endsnippet
+
+#propTypeInstanceOf 
+snippet pti 
+PropTypes.instanceOf($0), 
+Is an instance of a class prop type
+endsnippet
+
+#propTypeInstanceOfRequired 
+snippet ptir 
+PropTypes.instanceOf($0).isRequired, 
+Is an instance of a class prop type required
+endsnippet
+
+#propTypeEnum 
+snippet pte 
+PropTypes.oneOf(['$0'), 
+Prop type limited to specific values by treating it as an enum
+endsnippet
+
+#propTypeEnumRequired 
+snippet pter 
+PropTypes.oneOf(['$0').isRequired, 
+Prop type limited to specific values by treating it as an enum required
+endsnippet
+
+#propTypeOneOfType 
+snippet ptet 
+PropTypes.oneOfType([,   $0, ), 
+An object that could be one of many types
+endsnippet
+
+#propTypeOneOfTypeRequired 
+snippet ptetr 
+PropTypes.oneOfType([,   $0, ).isRequired, 
+An object that could be one of many types required
+endsnippet
+
+#propTypeArrayOf 
+snippet ptao 
+PropTypes.arrayOf($0), 
+An array of a certain type
+endsnippet
+
+#propTypeArrayOfRequired 
+snippet ptaor 
+PropTypes.arrayOf($0).isRequired, 
+An array of a certain type required
+endsnippet
+
+#propTypeObjectOf 
+snippet ptoo 
+PropTypes.objectOf($0), 
+An object with property values of a certain type
+endsnippet
+
+#propTypeObjectOfRequired 
+snippet ptoor 
+PropTypes.objectOf($0).isRequired, 
+An object with property values of a certain type required
+endsnippet
+
+#propTypeShape 
+snippet ptsh 
+PropTypes.shape({,   $0, }), 
+An object taking on a particular shape
+endsnippet
+
+#propTypeShapeRequired 
+snippet ptshr 
+PropTypes.shape({,   $0, }).isRequired, 
+An object taking on a particular shape required
+endsnippet
+
+#propTypeExact 
+snippet ptex 
+PropTypes.exact({,   $0, }), 
+An object with warnings on extra properties
+endsnippet
+
+#propTypeExactRequired 
+snippet ptexr 
+PropTypes.exact({,   $0, }).isRequired, 
+An object with warnings on extra properties required
+endsnippet
+
+#staticPropTpyes 
+snippet ptypes 
+static propTypes = {, $0, }   
+endsnippet
+
+#propTypeAny 
+snippet ptany 
+PropTypes.any, 
+Any prop type
+endsnippet
+
+#Comment Big Block 
+snippet cmmb 
+/**   * ${0}   */
+endsnippet
+
+#describeBlock 
+snippet desc 
+describe('$1', () => {,   $0, })   
+Testing `describe` block
+endsnippet
+
+#testBlock 
+snippet test 
+test('should $1', () => {,   $0, })   
+Testing `test` block
+endsnippet
+
+#testAsyncBlock 
+snippet testa 
+test('should $1', async () => {,   $0, })   
+Testing `asynchronous test` block
+endsnippet
+
+#itBlock 
+snippet tit 
+it('should $1', () => {,   $0, })   
+Testing `it` block
+endsnippet
+
+#itAsyncBlock 
+snippet tita 
+it('should $1', async () => {,   $0, })   
+Testing asynchronous `it` block
+endsnippet
+
+#setupReactTest 
+snippet stest 
+ 
+import React from 'react',
+import renderer from 'react-test-renderer' 
+ 
+import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+
+endsnippet
+
+#setupReactNativeTest 
+snippet sntest 
+ 
+import 'react-native' 
+import React from 'react' 
+import renderer from 'react-test-renderer' 
+ 
+import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+
+endsnippet
+
+#setupReactComponentTestWithRedux 
+snippet srtest 
+ 
+import React from 'react' 
+import renderer from 'react-test-renderer' 
+import { Provider } from 'react-redux' 
+ 
+import store from 'src/store' 
+import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create( 
+    <Provider store={store}> 
+     <${1:${TM_FILENAME_BASE}} {...defaultProps} /> 
+    </Provider>, 
+  ) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+,
+ Create test component
+endsnippet
+
+#setupReactNativeTestWithRedux 
+snippet snrtest 
+ 
+import 'react-native' 
+import React from 'react' 
+import renderer from 'react-test-renderer' 
+import { Provider } from 'react-redux' 
+ 
+import store from 'src/store' 
+import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create( 
+    <Provider store={store}> 
+      <${1:${TM_FILENAME_BASE}} {...defaultProps} /> 
+    </Provider>, 
+  ) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+
+endsnippet
+
+#graphQLForComponent 
+snippet graphql 
+import { compose, graphql } from 'react-apollo'   
+endsnippet
+
+#exportGraphQL 
+snippet expgql 
+export default compose
+   tgraphql${1:queryOrMutation  { name: ${2:name} } 
+${1:${TM_FILENAME_BASE}}
+endsnippet
+
+#hocComponentWithRedux 
+snippet hocredux 
+import React from 'react' 
+import PropTypes from 'prop-types' 
+import { connect } from 'react-redux' 
+ 
+export const mapStateToProps = state => ({ 
+ 
+}) 
+ 
+export const mapDispatchToProps = { 
+  
+} 
+ 
+export const ${1:hocComponentName} = (WrappedComponent) => { 
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} /> 
+ 
+  hocComponent.propTypes = { 
+  } 
+ 
+  return hocComponent 
+} 
+ 
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent)) 
+ 
+
+endsnippet
+
+#hocComponent 
+snippet hoc 
+ 
+import React from 'react' 
+import PropTypes from 'prop-types' 
+ 
+export default (WrappedComponent) => { 
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} /> 
+ 
+  hocComponent.propTypes = { 
+  } 
+ 
+  return hocComponent 
+} 
+ 
+
+endsnippet
+
+#useState 
+snippet useState 
+ 
+const [${1:state  set${1/(.*)/${1:/capitalize}/} = useState(${2:initialState})
+
+endsnippet
+
+#useEffect 
+snippet useEffect 
+ 
+useEffect(() => { 
+  ${1:effect} 
+  return () => { 
+    ${2:cleanup} 
+  } 
+  [${3:input})
+
+endsnippet
+
+#useContext 
+snippet useContext
+const ${1:context} = useContext(${2:contextValue})
+endsnippet
+
+#useReducer 
+snippet useReducer 
+ 
+const [state, dispatch = useReducer(${1:reducer  ${2:initialState  ${3:init})
+
+endsnippet
+
+#useCallback 
+snippet useCallback 
+ 
+useCallback( 
+  () => { 
+    ${1:callback} 
+    
+  [${2:input}, 
+)
+
+endsnippet
+
+#useMemo 
+snippet useMemo 
+useMemo(() => ${1:function  ${2:input})
+endsnippet
+
+#useRef 
+snippet useRef 
+const ${1:ref} = useRef(${2:initialValue})
+endsnippet
+
+#useImperativeHandle 
+snippet useImperativeHandle 
+ 
+useImperativeHandle( 
+  ${1:ref  
+  () => { 
+    ${2:handler} 
+    
+  [${3:input}, 
+)
+
+endsnippet
+
+#useDebugValue 
+snippet useDebugValue 
+useDebugValue(${1:value})
+endsnippet
+
+#useLayoutEffect 
+snippet useLayoutEffect 
+ 
+useLayoutEffect(() => { 
+  ${1:effect} 
+  return () => { 
+    ${2:cleanup} 
+  }; 
+  [${3:input})
+
+endsnippet
+
+#useSelector 
+snippet useSelector 
+const ${1:state} = useSelector(state => state.${1:state})
+endsnippet
+#useDispatch 
+snippet useDispatch 
+const dispatch = useDispatch(${1:function})
+endsnippet
+
+#typeof 
+snippet tpf 
+typeof ${0}
+endsnippet
+
+#_reactFunctionalExportComponent 
+snippet _rfce 
+ 
+function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+,
+Creates a React 17 Functional Component with ES7 module system
+endsnippet
+
+#_reactFunctionalComponent 
+snippet _rfc 
+ 
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+,
+Creates a React 17 Functional Component with ES7 module system
+endsnippet
+
+#_reactFunctionalComponentWithPropTypes 
+snippet _rfcp 
+ 
+import PropTypes from 'prop-types' 
+ 
+function ${1:${TM_FILENAME_BASE}}(props) { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+${1:${TM_FILENAME_BASE}}.propTypes = { 
+ 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+ 
+,
+Creates a React 17 Functional Component with ES7 module system with PropTypes
+endsnippet
+
+#_reactArrowFunctionExportComponent 
+snippet _rafce 
+ 
+const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+,
+Creates a React 17 Arrow Function Component with ES7 module system
+endsnippet
+
+#_reactArrowFunctionComponent 
+snippet _rafc 
+ 
+export const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+,
+Creates a React 17 Arrow Function Component with ES7 module system
+endsnippet
+
+#_reactArrowFunctionComponentWithPropTypes 
+snippet _rafcp
+ 
+import PropTypes from 'prop-types' 
+ 
+const ${1:${TM_FILENAME_BASE}} = props => { 
+  return ( 
+    <div> 
+      $0 
+    </div> 
+  ) 
+} 
+ 
+${1:${TM_FILENAME_BASE}}.propTypes = { 
+ 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+,
+Creates a React 17 Arrow Function Component with ES7 module system with PropTypes
+endsnippet
+
+#_reactNativeFunctionalExportComponent 
+snippet _rnfe 
+ 
+import { View, Text } from 'react-native' 
+ 
+const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+
+endsnippet
+
+#_reactNativeFunctionalExportComponentWithStyles 
+snippet _rnfes 
+ 
+import { StyleSheet, Text, View } from 'react-native' 
+ 
+const ${1:${TM_FILENAME_BASE}} = () => { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+export default ${1:${TM_FILENAME_BASE}} 
+ 
+const styles = StyleSheet.create({}) 
+ 
+
+endsnippet
+
+#_reactNativeFunctionalComponent 
+snippet _rnf 
+ 
+import { View, Text } from 'react-native' 
+ 
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+
+endsnippet
+
+#_reactNativeFunctionalComponentWithStyles 
+snippet _rnfs 
+ 
+import { StyleSheet, Text, View } from 'react-native' 
+ 
+export default function ${1:${TM_FILENAME_BASE}}() { 
+  return ( 
+    <View> 
+      <Text>$0</Text> 
+    </View> 
+  ) 
+} 
+ 
+const styles = StyleSheet.create({}) 
+ 
+
+endsnippet
+
+#_setupReactTest 
+snippet _stest 
+ 
+import renderer from 'react-test-renderer' 
+ 
+import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+j
+endsnippet
+
+#_setupReactNativeTest 
+snippet _sntest 
+ 
+import 'react-native' 
+import renderer from 'react-test-renderer' 
+ 
+import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+
+endsnippet
+
+#_setupReactComponentTestWithRedux 
+snippet _srtest 
+ 
+import renderer from 'react-test-renderer' 
+import { Provider } from 'react-redux' 
+ 
+import store from 'src/store' 
+import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create( 
+    <Provider store={store}> 
+     <${1:${TM_FILENAME_BASE}} {...defaultProps} /> 
+    </Provider>, 
+  ) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+,
+Create test component
+endsnippet
+
+#_setupReactNativeTestWithRedux 
+snippet _snrtest 
+ 
+import 'react-native' 
+import renderer from 'react-test-renderer' 
+import { Provider } from 'react-redux' 
+ 
+import store from 'src/store' 
+import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}' 
+ 
+describe('<${1:${TM_FILENAME_BASE}} />', () => { 
+  const defaultProps = {} 
+  const wrapper = renderer.create( 
+    <Provider store={store}> 
+      <${1:${TM_FILENAME_BASE}} {...defaultProps} /> 
+    </Provider>, 
+  ) 
+ 
+  test('render', () => { 
+    expect(wrapper).toMatchSnapshot() 
+  }) 
+}) 
+ 
+
+endsnippet
+
+#_hocComponentWithRedux 
+snippet _hocredux 
+ 
+import PropTypes from 'prop-types' 
+import { connect } from 'react-redux' 
+ 
+export const mapStateToProps = state => ({ 
+ 
+}) 
+ 
+export const mapDispatchToProps = { 
+  
+} 
+ 
+export const ${1:hocComponentName} = (WrappedComponent) => { 
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} /> 
+ 
+  hocComponent.propTypes = { 
+  } 
+ 
+  return hocComponent 
+} 
+ 
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent)) 
+ 
+
+endsnippet
+
+#_hocComponent 
+snippet _hoc 
+import PropTypes from 'prop-types' 
+ 
+export default (WrappedComponent) => { 
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} /> 
+ 
+  hocComponent.propTypes = { 
+  } 
+ 
+  return hocComponent 
+} 
+ 
+endsnippet
